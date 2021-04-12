@@ -1,4 +1,4 @@
-<%--
+<%@ page import="dbCheck.TestDB" %><%--
   Created by IntelliJ IDEA.
   User: oxqqq
   Date: 11.04.2021
@@ -18,6 +18,12 @@
 <h3>
     ${param["username"]}
 </h3>
+
+<%
+    TestDB tdb = new TestDB();
+
+%>
+<%=tdb.check()%>
 
 </body>
 </html>
