@@ -38,4 +38,8 @@ public class Author {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return full_name;
+    }
 }

@@ -4,21 +4,21 @@ body {
     font-style: normal;
     font-weight: normal;
     background-color: black;
-    margin: 100px;
 }
 .wrap{
     background-color: #1e1e1e;
-    height:100%;
+
 }
 .search{
     background-color: #1e1e1e ;
     width: 100%;
     height: 100px;
 }
+
 .main {
     background-color: #1e1e2a;
+    height: 100%;
     width: 60%;
-    height: 500px;
     margin: 0px auto;
     padding: 20px;
     float: left;

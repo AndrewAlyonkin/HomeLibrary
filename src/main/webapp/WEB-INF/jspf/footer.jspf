@@ -1,0 +1,8 @@
+<%@ page pageEncoding="UTF-8"%>
+<div class="footer">
+    Разработчик: Андрей Алёнкин, 2021 г, <a href="oxqq@ya.ru">oxqq@ya.ru</a>
+</div>
+</div>
+<!--wrap end-->
+</body>
+</html>

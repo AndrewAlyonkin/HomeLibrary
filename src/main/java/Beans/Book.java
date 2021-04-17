@@ -2,12 +2,13 @@ package Beans;
 
 import java.awt.*;
 import java.time.LocalDate;
+import java.time.Year;
 
 public class Book {
     private byte[] content;
     private Author author;
     private int pages;
-    private LocalDate publishDate;
+    private Year publishDate;
     private String publisher;
     private Image image;
     private String name;
@@ -16,9 +17,23 @@ public class Book {
     private String desc;
     private int rating;
 
-    public Book(String name, String isbn, String genre, String description, int page_count, int rating) {
+    public Book(Author author, int pages, Year publishDate,
+                String publisher, String name,
+                String isbn, Genre genre, String desc, int rating) {
+        this.author = author;
+        this.pages = pages;
+        this.publishDate = publishDate;
+        this.publisher = publisher;
         this.name = name;
-        this.genre = new Genre(genre);
+        this.isbn = isbn;
+        this.genre = genre;
+        this.desc = desc;
+        this.rating = rating;
+    }
+
+    public Book(String name, String isbn, String genre, String genreId, String description, int page_count, int rating) {
+        this.name = name;
+        this.genre = new Genre(Long.valueOf(genreId), genre);
         this.desc = description;
         this.pages = page_count;
         this.rating = rating;
@@ -48,11 +63,11 @@ public class Book {
         this.pages = pages;
     }
 
-    public LocalDate getPublishDate() {
+    public Year getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(LocalDate publishDate) {
+    public void setPublishDate(Year publishDate) {
         this.publishDate = publishDate;
     }
 

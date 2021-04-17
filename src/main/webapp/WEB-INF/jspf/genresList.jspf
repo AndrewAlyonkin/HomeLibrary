@@ -1,0 +1,14 @@
+<%@ page import="Beans.GenresList" %>
+<%@ page import="Beans.Genre" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<div class="list">
+    <p class="title">Книги по жанрам:</p>
+    <ul class="text">
+        <%GenresList list = new GenresList();%>
+        <%for (Genre g: list.getGenres() ) { %>
+        <li><a href="books.jsp?genreId=<%=g.getId()%>&genreName=<%=g.getName()%>" style="color:orange"><%=g.getName()%></a></li>
+        <%}%>
+    </ul>
+    </p>
+</div>
