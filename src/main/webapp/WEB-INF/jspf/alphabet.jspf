@@ -1,0 +1,9 @@
+<%@ page import="util.Letters" %>
+<%@ page pageEncoding="UTF-8"%>
+<div class="alphabet">
+    <%Letters letters = new Letters();
+    char[] alphabet = letters.getRuLetters();
+        for (int i = 0; i < alphabet.length; i++) {%>
+    <a href="books.jsp?letter=<%=alphabet[i]%>"><%=alphabet[i]%></a>
+       <%}%>
+</div>

@@ -14,15 +14,16 @@ import java.util.logging.Logger;
 
 public class DbHelper {
 
-    public <T> List<T> execute(String s, BeanReader<T> beanReader, Long param) {
+    public <T> List<T> execute(String s, BeanReader<T> beanReader, ParamSetuper param) {
+        List<T> result = new ArrayList<>();
         try(Connection conn = Config.get().getConnectionFactory().getConnection()) {
             Statement stmt = conn.createStatement();
             PreparedStatement prepSt = conn.prepareStatement(s);
             if (param !=null) {
-                prepSt.setLong(1, param);
+               param.setParams(prepSt);
             }
             ResultSet rs = prepSt.executeQuery();
-            List<T> result = new ArrayList<>();
+
             while (rs.next()) {
                 result.add(beanReader.readFromDb(rs));
             }
@@ -30,7 +31,7 @@ public class DbHelper {
         } catch (NamingException | SQLException ex) {
            Logger.getLogger(DbHelper.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        return result;
     }
 
     public <T> List<T> execute(String s, BeanReader<T> beanReader) {

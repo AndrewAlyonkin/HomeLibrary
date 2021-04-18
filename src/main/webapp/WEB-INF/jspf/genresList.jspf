@@ -5,6 +5,7 @@
 <div class="list">
     <p class="title">Книги по жанрам:</p>
     <ul class="text">
+        <li><a href="books.jsp?getAll=true" style="color:orange">Показать все</a></li>
         <%GenresList list = new GenresList();%>
         <%for (Genre g: list.getGenres() ) { %>
         <li><a href="books.jsp?genreId=<%=g.getId()%>&genreName=<%=g.getName()%>" style="color:orange"><%=g.getName()%></a></li>

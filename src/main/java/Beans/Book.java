@@ -10,7 +10,7 @@ public class Book {
     private int pages;
     private Year publishDate;
     private String publisher;
-    private Image image;
+    private byte[] image;
     private String name;
     private String isbn;
     private Genre genre;
@@ -19,7 +19,7 @@ public class Book {
 
     public Book(Author author, int pages, Year publishDate,
                 String publisher, String name,
-                String isbn, Genre genre, String desc, int rating) {
+                String isbn, Genre genre, String desc, int rating, byte[] image) {
         this.author = author;
         this.pages = pages;
         this.publishDate = publishDate;
@@ -79,11 +79,11 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Image getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 

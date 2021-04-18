@@ -36,12 +36,12 @@
         <p>&nbsp;</p>
     </div>
 
-    <div class="login_div">
+    <div  class="login_div">
         <p class="title"> Введите имя для авторизации в библиотеке</p>
-        <form name="greeting" action="pages/mainPage.jsp" method="post" class="login_form">
+        <form name="greeting" action="${pageContext.request.contextPath}/pages/mainPage.jsp" method="get" class="login_form">
             <p>
                 <input type="text" class="colortext" name="username" size="20" value="">
-                <input type="submit" name="Войти">
+                <button class="searchB" type="submit">Войти</button>
             </p>
         </form>
     </div>
